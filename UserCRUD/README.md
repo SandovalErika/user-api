@@ -32,14 +32,11 @@ App backend de CRUD de usuarios.
 Para ejecutar la aplicación es necesario tener instalado Docker y ejecutar los siguientes comandos (ubicados sobre el directorio del proyecto):
 
 ```bash
-# Para construir la imagen:
-sudo docker build -t usercrud .
-
 # Para construir y correr el contenedor:
 sudo docker-compose-up
 
 # Luego se puede ver los endpoints documentados en swagger desde el navegador en:
-localhost:8081/api/docs#
+localhost:8080/api/docs#
 ```
 
 ## Project setup
@@ -53,12 +50,6 @@ $ npm install
 ```bash
 # development
 $ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
 ```
 
 ## Run tests
