@@ -1,0 +1,44 @@
+version: '3.8'
+services:
+  postgresdb:
+    image: postgres:latest
+    container_name: postgresdb
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: 1234
+      POSTGRES_DB: userdb
+    ports:
+      - "6432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - my_network
+
+  nestjs-app:
+    build:
+      context: ./UserCRUD
+    container_name: nestjs-app
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgresdb 
+    networks:
+      - my_network
+
+  userfront-app:
+    build:
+      context: ./UserFront
+    container_name: userfront-app
+    ports:
+      - "3000:3000"
+    depends_on:
+      - nestjs-app
+    networks:
+      - my_network
+
+networks:
+  my_network:
+    driver: bridge
+
+volumes:
+  postgres_data:
