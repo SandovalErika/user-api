@@ -8,13 +8,17 @@ App frontEnd de CRUD de usuarios
 Para ejecutar la aplicación es necesario tener instalado Docker y ejecutar los siguientes comandos (ubicados sobre el directorio del proyecto):
 
 ```bash
-# Para construir las imagenes y correr los contenedores:
+##PASOS
+# 1) Construir las imagenes y correr los contenedores:
 sudo docker-compose up --build
 
+# 2) Ir al navegador e colocar la url local 
+http://localhost:3000/users
 
-# Luego se puede ver los endpoints documentados en swagger desde el navegador en:
+# 3) Se pueden ver los endpoints documentados en swagger desde el navegador en:
 localhost:8080/api/docs#
 ```
+-----------------------------------------------------------------------------------------------------------------------------------------------
 
 ## Project setup
 
